@@ -66,16 +66,19 @@ public class Movie {
     };
 
     public String getGenresAsString() {
+        if(genres == null) return "";
         return genres.stream().map(Enum::name).reduce((a, b) -> a + ", " + b).orElse("No Genre");
-
     }
     public String getDirectorsAsString() {
+        if(directors == null) return "";
         return directors.stream().reduce((a, b) -> a + ", " + b).orElse("n/a");
     }
     public String getWritersAsString() {
+        if(writers == null) return "";
         return writers.stream().reduce((a, b) -> a + ", " + b).orElse("No Genre");
     }
     public String getMainCastAsString() {
+        if(mainCast == null) return "";
         return mainCast.stream().reduce((a, b) -> a + ", " + b).orElse("No Genre");
     }
 
